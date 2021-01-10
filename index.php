@@ -3,6 +3,15 @@
             <div id="layoutDefault_content">
                 <main>
 
+                    <?php
+                    $sql="select * from test";
+                    $statement=$pdo->prepare($sql);
+                    $statement->execute();
+                    while($post=$statement->fetch(PDO::FETCH_ASSOC)){
+                        echo $post['name'].'<br>';
+                    }
+
+                    ?>
                     <nav class="navbar navbar-marketing navbar-expand-lg bg-white navbar-light">
                         <div class="container">
                             <a class="navbar-brand text-dark" href="index.php">TechBarik</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><img src="img/menu.png" style="height:20px;width:25px" /><i data-feather="menu"></i></button>
