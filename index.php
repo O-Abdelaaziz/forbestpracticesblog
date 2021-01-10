@@ -3,15 +3,6 @@
             <div id="layoutDefault_content">
                 <main>
 
-                    <?php
-                    $sql="select * from test";
-                    $statement=$pdo->prepare($sql);
-                    $statement->execute();
-                    while($post=$statement->fetch(PDO::FETCH_ASSOC)){
-                        echo $post['name'].'<br>';
-                    }
-
-                    ?>
                     <nav class="navbar navbar-marketing navbar-expand-lg bg-white navbar-light">
                         <div class="container">
                             <a class="navbar-brand text-dark" href="index.php">TechBarik</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><img src="img/menu.png" style="height:20px;width:25px" /><i data-feather="menu"></i></button>
@@ -114,126 +105,55 @@
                             <h1>Recent posting:</h1>
                             <hr />
                             <div class="row">
-                                <div class="col-md-6 col-xl-4 mb-5">
-                                    <a class="card post-preview lift h-100" href="#"
-                                        ><img class="card-img-top" src="./img/pic1.png" alt="photo" />
-                                        <div class="card-body">
-                                            <h5 class="card-title">Lorem ipsum dolor sit amet, consectetur</h5>
-                                            <p class="card-text">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.               
-                                            </p>
-                                        </div>
-                                        <div class="card-footer">
-                                            <div class="post-preview-meta">
-                                                <img class="post-preview-meta-img" src="./img/mdabarik.jpg" />
-                                                <div class="post-preview-meta-details">
-                                                    <div class="post-preview-meta-details-name">Henry Iman</div>
-                                                    <div class="post-preview-meta-details-date">Feb 3 &#xB7; 7 min read</div>
+
+                                <?php
+                                $sql="select * from posts where status = :status";
+                                $statement=$pdo->prepare($sql);
+                                $statement->execute([
+                                        ':status'=>'Published'
+                                ]);
+                                //$posts=$statement->fetch(PDO::FETCH_ASSOC);
+
+                                while ($posts=$statement->fetch(PDO::FETCH_ASSOC)){
+                                    $postTitle=$posts['title'];
+                                    $postDescription=substr($posts['description'],0,140) ;
+                                    $postAuthor=$posts['author'];
+                                    $postCategory=$posts['category'];
+                                    $postStatus=$posts['status'];
+                                    $postDate=$posts['date'];
+                                    $postImage=$posts['image'];
+                                    $postCommentCount=$posts['comment_count'];
+                                    $postViewes=$posts['viewes'];
+                                    $postLikes=$posts['likes'];
+                                    $postTags=$posts['tags'];?>
+
+                                    <div class="col-md-6 col-xl-4 mb-5">
+                                        <a class="card post-preview lift h-100" href="#"
+                                        ><img class="card-img-top" src="./img/<?php echo $postImage ?>" alt="<?php echo $postImage ?>" />
+                                            <div class="card-body">
+                                                <h5 class="card-title"><?php echo $postTitle ?></h5>
+                                                <p class="card-text">
+                                                    <?php echo $postDescription ?>
+                                                </p>
+                                            </div>
+                                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                                <div class="post-preview-meta">
+                                                    <img class="post-preview-meta-img" src="./img/legend.png" />
+                                                    <div class="post-preview-meta-details">
+                                                        <div class="post-preview-meta-details-name"><?php echo $postAuthor ?></div>
+                                                        <div class="post-preview-meta-details-date">Posted on: <?php echo $postDate ?></div>
+                                                    </div>
+                                                </div>
+                                                <div class="div.post-preview-meta">
+                                                    <?php echo $postViewes ?>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-md-6 col-xl-4 mb-5">
-                                    <a class="card post-preview lift h-100" href="#"
-                                        ><img class="card-img-top" src="./img/pic1.png" alt="photo" />
-                                        <div class="card-body">
-                                            <h5 class="card-title">Lorem ipsum dolor sit amet, consectetur</h5>
-                                            <p class="card-text">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.               
-                                            </p>
-                                        </div>
-                                        <div class="card-footer">
-                                            <div class="post-preview-meta">
-                                                <img class="post-preview-meta-img" src="./img/mdabarik.jpg" />
-                                                <div class="post-preview-meta-details">
-                                                    <div class="post-preview-meta-details-name">Henry Iman</div>
-                                                    <div class="post-preview-meta-details-date">Feb 3 &#xB7; 7 min read</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-md-6 col-xl-4 mb-5">
-                                    <a class="card post-preview lift h-100" href="#"
-                                        ><img class="card-img-top" src="./img/pic1.png" alt="photo" />
-                                        <div class="card-body">
-                                            <h5 class="card-title">Lorem ipsum dolor sit amet, consectetur</h5>
-                                            <p class="card-text">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.               
-                                            </p>
-                                        </div>
-                                        <div class="card-footer">
-                                            <div class="post-preview-meta">
-                                                <img class="post-preview-meta-img" src="./img/mdabarik.jpg" />
-                                                <div class="post-preview-meta-details">
-                                                    <div class="post-preview-meta-details-name">Henry Iman</div>
-                                                    <div class="post-preview-meta-details-date">Feb 3 &#xB7; 7 min read</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-md-6 col-xl-4 mb-5">
-                                    <a class="card post-preview lift h-100" href="#"
-                                        ><img class="card-img-top" src="./img/pic1.png" alt="photo" />
-                                        <div class="card-body">
-                                            <h5 class="card-title">Lorem ipsum dolor sit amet, consectetur</h5>
-                                            <p class="card-text">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.               
-                                            </p>
-                                        </div>
-                                        <div class="card-footer">
-                                            <div class="post-preview-meta">
-                                                <img class="post-preview-meta-img" src="./img/mdabarik.jpg" />
-                                                <div class="post-preview-meta-details">
-                                                    <div class="post-preview-meta-details-name">Henry Iman</div>
-                                                    <div class="post-preview-meta-details-date">Feb 3 &#xB7; 7 min read</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-md-6 col-xl-4 mb-5">
-                                    <a class="card post-preview lift h-100" href="#"
-                                        ><img class="card-img-top" src="./img/pic1.png" alt="photo" />
-                                        <div class="card-body">
-                                            <h5 class="card-title">Lorem ipsum dolor sit amet, consectetur</h5>
-                                            <p class="card-text">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.               
-                                            </p>
-                                        </div>
-                                        <div class="card-footer">
-                                            <div class="post-preview-meta">
-                                                <img class="post-preview-meta-img" src="./img/mdabarik.jpg" />
-                                                <div class="post-preview-meta-details">
-                                                    <div class="post-preview-meta-details-name">Henry Iman</div>
-                                                    <div class="post-preview-meta-details-date">Feb 3 &#xB7; 7 min read</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-md-6 col-xl-4 mb-5">
-                                    <a class="card post-preview lift h-100" href="#"
-                                        ><img class="card-img-top" src="./img/pic1.png" alt="photo" />
-                                        <div class="card-body">
-                                            <h5 class="card-title">Lorem ipsum dolor sit amet, consectetur</h5>
-                                            <p class="card-text">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.               
-                                            </p>
-                                        </div>
-                                        <div class="card-footer">
-                                            <div class="post-preview-meta">
-                                                <img class="post-preview-meta-img" src="./img/mdabarik.jpg" />
-                                                <div class="post-preview-meta-details">
-                                                    <div class="post-preview-meta-details-name">Henry Iman</div>
-                                                    <div class="post-preview-meta-details-date">Feb 3 &#xB7; 7 min read</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
+                                        </a>
+                                    </div>
+
+                                <?php }
+                                ?>
+
                             </div>
 
                             <nav aria-label="Page navigation example">
