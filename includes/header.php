@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content />
     <meta name="author" content />
-    <title>Home-TechBarik</title>
+    <title><?php echo $currentPage ?></title>
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/fontawesome/css/all.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="img/favicon.png" />

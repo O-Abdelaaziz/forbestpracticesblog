@@ -1,3 +1,5 @@
+
+<?php $currentPage="single poste"?>
 <?php require_once ("./includes/header.php")?>
         <div id="layoutDefault">
             <div id="layoutDefault_content">
@@ -48,6 +50,14 @@
                         $postViewes = $singlePost['viewes'];
                         $postLikes = $singlePost['likes'];
                         $postTags = $singlePost['tags'];
+
+                        $sqlUpdatePostView="update posts set viewes= :viewes  where id= :id";
+                        $updateStatment=$pdo->prepare($sqlUpdatePostView);
+
+                        $updateStatment->execute([
+                                 ':viewes'=>++$postViewes,
+                                 ':id'=>$postId
+                        ]);
                     }else{
                         header("Location: index.php");
                     }
