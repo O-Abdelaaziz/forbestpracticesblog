@@ -11,6 +11,7 @@
     <meta name="author" content />
     <title>Home-TechBarik</title>
     <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/fontawesome/css/all.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="img/favicon.png" />
 </head>
 <body>

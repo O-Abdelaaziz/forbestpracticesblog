@@ -115,6 +115,7 @@
                                 //$posts=$statement->fetch(PDO::FETCH_ASSOC);
 
                                 while ($posts=$statement->fetch(PDO::FETCH_ASSOC)){
+                                    $postId=$posts['id'];
                                     $postTitle=$posts['title'];
                                     $postDescription=substr($posts['description'],0,140) ;
                                     $postAuthor=$posts['author'];
@@ -128,7 +129,7 @@
                                     $postTags=$posts['tags'];?>
 
                                     <div class="col-md-6 col-xl-4 mb-5">
-                                        <a class="card post-preview lift h-100" href="#"
+                                        <a class="card post-preview lift h-100" href="single.php?post_id=<?php echo $postId ?>"
                                         ><img class="card-img-top" src="./img/<?php echo $postImage ?>" alt="<?php echo $postImage ?>" />
                                             <div class="card-body">
                                                 <h5 class="card-title"><?php echo $postTitle ?></h5>
@@ -145,6 +146,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="div.post-preview-meta">
+                                                    <i class="fas fa-eye"></i>
                                                     <?php echo $postViewes ?>
                                                 </div>
                                             </div>
@@ -235,63 +237,34 @@
 
                             <h1 class="pt-5">Browse by categories:</h1>
                             <hr />
+
                             <div class="row features text-center mb-5">
-                                <div class="col-lg-4 col-md-6 mb-5">
-                                    <a class="card card-link border-top border-top-lg border-primary h-100 lift" href="#!"
-                                        ><div class="card-body p-5">
-                                            <div class="icon-stack icon-stack-lg bg-primary-soft text-primary mb-4"><i data-feather="user"></i></div>
-                                            <h6>Account</h6>
-                                        </div>
-                                        <div class="card-footer bg-transparent pt-0 pb-5"><div class="badge badge-pill badge-light font-weight-normal px-3 py-2">21 Posts</div></div></a
-                                    >
-                                </div>
-                                <div class="col-lg-4 col-md-6 mb-5">
-                                    <a class="card card-link border-top border-top-lg border-green h-100 lift" href="#!"
-                                        ><div class="card-body p-5">
-                                            <div class="icon-stack icon-stack-lg bg-green-soft text-green mb-4"><i data-feather="clock"></i></div>
-                                            <h6>Integrations</h6>
-                                        </div>
-                                        <div class="card-footer bg-transparent pt-0 pb-5"><div class="badge badge-pill badge-light font-weight-normal px-3 py-2">9 Posts</div></div></a
-                                    >
-                                </div>
-                                <div class="col-lg-4 col-md-6 mb-5">
-                                    <a class="card card-link border-top border-top-lg border-yellow h-100 lift" href="#!"
-                                        ><div class="card-body p-5">
-                                            <div class="icon-stack icon-stack-lg bg-yellow-soft text-yellow mb-4"><i data-feather="clock"></i></div>
-                                            <h6>Billing</h6>
-                                        </div>
-                                        <div class="card-footer bg-transparent pt-0 pb-5"><div class="badge badge-pill badge-light font-weight-normal px-3 py-2">14 Posts</div></div></a
-                                    >
-                                </div>
-                                <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
-                                    <a class="card card-link border-top border-top-lg border-purple h-100 lift" href="#!"
-                                        ><div class="card-body p-5">
-                                            <div class="icon-stack icon-stack-lg bg-purple-soft text-purple mb-4"><i data-feather="clock"></i></div>
-                                            <h6>Organizations</h6>
-                                        </div>
-                                        <div class="card-footer bg-transparent pt-0 pb-5"><div class="badge badge-pill badge-light font-weight-normal px-3 py-2">17 Posts</div></div></a
-                                    >
-                                </div>
-                                <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
-                                    <a class="card card-link border-top border-top-lg border-red h-100 lift" href="#!"
-                                        ><div class="card-body p-5">
-                                            <div class="icon-stack icon-stack-lg bg-red-soft text-red mb-4"><i data-feather="clock"></i></div>
-                                            <h6>Performance</h6>
-                                        </div>
-                                        <div class="card-footer bg-transparent pt-0 pb-5"><div class="badge badge-pill badge-light font-weight-normal px-3 py-2">7 Posts</div></div></a
-                                    >
-                                </div>
+                                <?php
+                                $sqlCategory="select * from categories where status= :status";
+                                $statement=$pdo->prepare($sqlCategory);
+                                $statement->execute([':status'=>'Published']);
+
+                                while ($Categories=$statement->fetch(PDO::FETCH_ASSOC)){
+                                $id=$Categories["id"];
+                                $name=$Categories["name"];
+                                $total_posts=$Categories["total_posts"];
+                                $post_views=$Categories["post_views"];
+                                $status=$Categories["status"];
+                                $created_on=$Categories["created_on"];
+                                $created_by=$Categories["created_by"];?>
+
                                 <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
                                     <a class="card card-link border-top border-top-lg border-teal h-100 lift" href="#!"
                                         ><div class="card-body p-5">
                                             <div class="icon-stack icon-stack-lg bg-teal-soft text-teal mb-4"><i data-feather="clock"></i></div>
-                                            <h6>Customizing</h6>
+                                            <h6><?php echo $name?></h6>
                                         </div>
-                                        <div class="card-footer bg-transparent pt-0 pb-5"><div class="badge badge-pill badge-light font-weight-normal px-3 py-2">14 Posts</div></div>
+                                        <div class="card-footer bg-transparent pt-0 pb-5"><div class="badge badge-pill badge-light font-weight-normal px-3 py-2"><?php echo $total_posts?> Posts</div></div>
                                     </a>
                                 </div>
-                            </div>
+                                <?php  }?>
 
+                            </div>
                         </div>
                         <!--End-->   
                         <!--Waves-->
