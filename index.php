@@ -33,12 +33,16 @@
 
                                         <h1 class="page-header-title">Welcome to TechBarik</h1>
                                         <p class="page-header-text mb-5">Are you searching for some content that you haven't found yet? Try searching in the search box below!</p>
-                                        <form class="page-header-signup mb-2 mb-md-0">
+                                        <form class="page-header-signup mb-2 mb-md-0" action="search.php">
                                             <div class="form-row justify-content-center">
                                                 <div class="col-lg-6 col-md-8">
-                                                    <div class="form-group mr-0 mr-lg-2"><input class="form-control form-control-solid rounded-pill" type="text" placeholder="Search keyword..."/></div>
+                                                    <div class="form-group mr-0 mr-lg-2">
+                                                        <input name="search-keyword" class="form-control form-control-solid rounded-pill" type="text" placeholder="Search keyword..."/>
+                                                    </div>
                                                 </div>
-                                                <div class="col-lg-3 col-md-4"><button class="btn btn-teal btn-block btn-marketing rounded-pill" type="submit">Search</button></div>
+                                                <div class="col-lg-3 col-md-4">
+                                                    <button class="btn btn-teal btn-block btn-marketing rounded-pill" type="submit">Search</button>
+                                                </div>
                                             </div>
                                         </form>
 
@@ -116,7 +120,7 @@
                             <div class="row">
 
                                 <?php
-                                $sql="select * from posts where status = :status";
+                                $sql="select * from posts where status = :status ORDER BY id DESC ";
                                 $statement=$pdo->prepare($sql);
                                 $statement->execute([
                                         ':status'=>'Published'
@@ -128,7 +132,7 @@
                                     $postTitle=$posts['title'];
                                     $postDescription=substr($posts['description'],0,140) ;
                                     $postAuthor=$posts['author'];
-                                    $postCategory=$posts['category'];
+                                    $postCategory=$posts['categoryId'];
                                     $postStatus=$posts['status'];
                                     $postDate=$posts['date'];
                                     $postImage=$posts['image'];
@@ -151,7 +155,7 @@
                                                     <img class="post-preview-meta-img" src="./img/legend.png" />
                                                     <div class="post-preview-meta-details">
                                                         <div class="post-preview-meta-details-name"><?php echo $postAuthor ?></div>
-                                                        <div class="post-preview-meta-details-date">Posted on: <?php echo $postDate ?></div>
+                                                        <div class="post-preview-meta-details-date"><?php echo $postDate ?></div>
                                                     </div>
                                                 </div>
                                                 <div class="div.post-preview-meta">
@@ -236,7 +240,7 @@
                                 $created_by=$Categories["created_by"];?>
 
                                 <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
-                                    <a class="card card-link border-top border-top-lg border-teal h-100 lift" href="#!"
+                                    <a class="card card-link border-top border-top-lg border-teal h-100 lift" href="categories.php?category_id=<?php echo $id?>&category_name=<?php echo mb_strtolower($name) ?>"
                                         ><div class="card-body p-5">
                                             <div class="icon-stack icon-stack-lg bg-teal-soft text-teal mb-4"><i data-feather="clock"></i></div>
                                             <h6><?php echo $name?></h6>
