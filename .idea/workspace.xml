@@ -2,11 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92b881c9-c2ea-423a-be48-a2df4cd8bc96" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/categorysearch.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/categories.php" beforeDir="false" afterPath="$PROJECT_DIR$/categories.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/add-category.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/add-category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/add-new-profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/add-new-profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/add-new.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/add-new.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/all-post.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/all-post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/categories.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/comments.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/comments.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/edit-category.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/edit-category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/edit-post.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/edit-post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/edit-user-profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/edit-user-profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/forgot-password.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/forgot-password.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/messages.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/messages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/new-category.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/new-category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/new-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/new-page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/new-user.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/new-user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pages.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/post-comment.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/post-comment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/reply.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/reply.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/signin.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/signin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/user-update.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/user-update.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/users.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +64,7 @@
       <option name="presentableId" value="Default" />
       <updated>1610283598490</updated>
       <workItem from="1610283601221" duration="7496000" />
-      <workItem from="1610542685106" duration="15862000" />
+      <workItem from="1610542685106" duration="17586000" />
     </task>
     <servers />
   </component>
