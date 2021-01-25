@@ -1,5 +1,7 @@
+<?php session_start();?>
 <?php $currentPage="index"?>
 <?php require_once ("./includes/header.php")?>
+
         <div id="layoutDefault">
             <div id="layoutDefault_content">
                 <main>
@@ -19,8 +21,7 @@
                                         <a class="nav-link" href="about.php">About</a>
                                     </li>
                                 </ul>
-                                <a class="btn-teal btn rounded-pill px-4 ml-lg-4" href="backend/signin.php">Sign in<i class="fas fa-arrow-right ml-1"></i></a>
-                                <a class="btn-teal btn rounded-pill px-4 ml-lg-4" href="backend/signup.php">Sign up<i class="fas fa-arrow-right ml-1"></i></a>
+                                    <?php require_once('./includes/registration.php') ?>
                             </div>
                         </div>
                     </nav>

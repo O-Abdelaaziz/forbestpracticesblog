@@ -1,6 +1,8 @@
 
 <?php require_once ("./includes/database.php"); ?>
 
+<?php ob_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -3,28 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="92b881c9-c2ea-423a-be48-a2df4cd8bc96" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/add-category.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/add-category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/add-new-profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/add-new-profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/add-new.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/add-new.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/all-post.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/all-post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/categories.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/comments.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/comments.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/edit-category.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/edit-category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/edit-post.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/edit-post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/edit-user-profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/edit-user-profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/forgot-password.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/forgot-password.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/messages.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/messages.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/new-category.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/new-category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/new-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/new-page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/new-user.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/new-user.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pages.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pages.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/post-comment.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/post-comment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/reply.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/reply.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/forgot-password.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/forgot-password.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/includes/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/includes/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/signin.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/signin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/user-update.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/user-update.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/signup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/single.php" beforeDir="false" afterPath="$PROJECT_DIR$/single.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +34,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -65,6 +52,9 @@
       <updated>1610283598490</updated>
       <workItem from="1610283601221" duration="7496000" />
       <workItem from="1610542685106" duration="17586000" />
+      <workItem from="1610784017223" duration="1198000" />
+      <workItem from="1611055910687" duration="8679000" />
+      <workItem from="1611497874034" duration="16196000" />
     </task>
     <servers />
   </component>

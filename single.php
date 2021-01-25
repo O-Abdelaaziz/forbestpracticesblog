@@ -42,7 +42,7 @@
                         $postTitle = $singlePost['title'];
                         $postDescription = $singlePost['description'];
                         $postAuthor = $singlePost['author'];
-                        $postCategory = $singlePost['category'];
+                        $postCategory = $singlePost['categoryId'];
                         $singlePosttatus = $singlePost['status'];
                         $postDate = $singlePost['date'];
                         $postImage = $singlePost['image'];
@@ -58,6 +58,15 @@
                                  ':viewes'=>++$postViewes,
                                  ':id'=>$postId
                         ]);
+
+
+                        $sqlSingleCategory="select * from categories where id=:id";
+                        $singleCategoryStatement=$pdo->prepare($sqlSingleCategory);
+                        $singleCategoryStatement->execute([
+                                ":id"=>$postCategory
+                        ]);
+                        $getCatiegories=$singleCategoryStatement->fetch(PDO::FETCH_ASSOC);
+                        $catNam=$getCatiegories['name'];
                     }else{
                         header("Location: index.php");
                     }
@@ -69,7 +78,7 @@
                                 <div class="row justify-content-center">
                                     <div class="col-lg-8">
                                         <h1 class="page-header-title mb-3"><?php echo $postTitle ?></h1>
-                                        <p class="page-header-text">Category: <?php echo $postCategory ?>,Posted by: <?php echo $postAuthor; ?></p>
+                                        <p class="page-header-text">Category: <?php echo $catNam ?>,Posted by: <?php echo $postAuthor; ?></p>
                                     </div>
                                 </div>
                             </div>
