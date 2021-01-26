@@ -1,4 +1,3 @@
-<?php session_start();?>
 <?php $currentPage="index"?>
 <?php require_once ("./includes/header.php")?>
 
@@ -8,7 +7,7 @@
 
                     <nav class="navbar navbar-marketing navbar-expand-lg bg-white navbar-light">
                         <div class="container">
-                            <a class="navbar-brand text-dark" href="index.php">TechBarik</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><img src="img/menu.png" style="height:20px;width:25px" /><i data-feather="menu"></i></button>
+                            <a class="navbar-brand text-dark" href="index.php">O.A</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><img src="img/menu.png" style="height:20px;width:25px" /><i data-feather="menu"></i></button>
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav ml-auto mr-lg-5">
                                     <li class="nav-item">
@@ -21,7 +20,10 @@
                                         <a class="nav-link" href="about.php">About</a>
                                     </li>
                                 </ul>
-                                    <?php require_once('./includes/registration.php') ?>
+                                    <?php
+                                        $currentPage=basename(__FILE__);
+                                        require_once('./includes/registration.php')
+                                    ?>
                             </div>
                         </div>
                     </nav>

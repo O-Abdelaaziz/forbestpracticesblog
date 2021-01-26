@@ -1,4 +1,3 @@
-
 <?php $currentPage="single poste"?>
 <?php require_once ("./includes/header.php")?>
         <div id="layoutDefault">
@@ -20,8 +19,9 @@
                                         <a class="nav-link" href="about.php">About</a>
                                     </li>
                                 </ul>
-                                <a class="btn-teal btn rounded-pill px-4 ml-lg-4" href="backend/signin.php">Sign in<i class="fas fa-arrow-right ml-1"></i></a>
-                                <a class="btn-teal btn rounded-pill px-4 ml-lg-4" href="backend/signup.php">Sign up<i class="fas fa-arrow-right ml-1"></i></a>
+                                <?php
+                                $currentPage=basename(__FILE__).'?post_id='.$_GET['post_id'];
+                                require_once('./includes/registration.php') ?>
                             </div>
                         </div>
                     </nav>
@@ -114,14 +114,25 @@
                                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque blanditiis, exercitationem architecto accusamus quis repellendus magni nam ipsam id qui non itaque eos, consectetur maiores aperiam sapiente. Libero, possimus minus.                                  
                                     </div>
                                 </div>
-                                
-                                <div class="card">
-                                    <div class="card-header">Add Comment</div>
-                                    <div class="card-body">
-                                        <textarea placeholder="Type here..." class="form-control mb-2" rows="4"></textarea>
-                                        <button class="btn btn-primary btn-sm mr-2">Post Comment</button>
-                                    </div>
-                                </div>
+
+                                <?php
+                                    if(isset($_SESSION['login'])){?>
+
+                                        <div class="card">
+                                            <div class="card-header">Add Comment</div>
+                                            <div class="card-body">
+                                                <textarea placeholder="Type here..." class="form-control mb-2" rows="4"></textarea>
+                                                <button class="btn btn-primary btn-sm mr-2">Post Comment</button>
+                                            </div>
+                                        </div>
+
+                                    <?php }else{
+                                        echo "<a href='backend/signin.php'>sigin in to post a comment</a>";
+                                    }
+
+
+                                    ?>
+
                             </div>
                             <!--end comment section end-->
                         </div>

@@ -1,4 +1,4 @@
-
+<?php session_start();?>
 <?php require_once ("./includes/database.php"); ?>
 
 <?php ob_start(); ?>
